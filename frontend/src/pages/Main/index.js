@@ -1,28 +1,50 @@
 import React from 'react';
-
 import {
-  Text, View, StyleSheet, Dimensions, ImageBackground, StatusBar,
+  View, StyleSheet
 } from 'react-native';
+import 'react-native-gesture-handler';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
+
+import TaskList from '../../components/TaskList';
+import RoundedButton from '../../components/RoundedButton';
+
+const HomeScreen = () => {
+
+  const isFocused = useIsFocused();
+  
+  return(
+    <View style={styles.main}>
+        <View style={styles.container}>
+          { 
+            isFocused ?    
+              <TaskList /> 
+            : 
+              <View/>
+          }
+        </View>
+        <View style={styles.bottomView}>
+          <RoundedButton/>
+        </View>
+      </View>
+  )
+};
 
 const styles = StyleSheet.create({
+  main: {
+    flexDirection: 'column',
+    backgroundColor: '#ddd',
+    flex: 1
+  },
+  header: {
+    fontSize: 32,
+    backgroundColor: "#fff"
+  },
   container: {
-    alignItems: 'center',
     flex: 1,
-    paddingHorizontal: 20,
   },
-  welcome: {
-    color: '#272727',
-    fontSize: 22,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
+  bottomView:{
+    alignItems: 'flex-end'
+  }
 });
 
-const Main = () => (
-  <View>
-    <StatusBar barStyle="light-content" backgroundColor="#FF0164" />
-    <Text style={styles.welcome}>Rotaract</Text>
-  </View>
-);
-
-export default Main;
+export default HomeScreen;

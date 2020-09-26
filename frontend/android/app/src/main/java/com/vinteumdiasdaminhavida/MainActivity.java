@@ -1,6 +1,7 @@
-package com.frontend;
+package com.vinteumdiasdaminhavida;
 
 import com.facebook.react.ReactActivity;
+import com.facebook.react.BuildConfig;
 
 public class MainActivity extends ReactActivity {
 
@@ -10,6 +11,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "frontend";
+    return "vinteumdiasdaminhavida";
   }
 }

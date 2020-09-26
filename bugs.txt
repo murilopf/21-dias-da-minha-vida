@@ -1,0 +1,5 @@
+- Quando cria uma task, só aparece se criar outra - OK
+- Se titulo da task for muito grande quebra o layout - OK
+- Amarelo do checkbox não está legal - OK
+- Elevation nos card não está legal - OK
+- cadastrar em outro dia dando errro - ok
